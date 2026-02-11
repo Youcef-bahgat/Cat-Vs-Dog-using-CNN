@@ -14,7 +14,7 @@ st.write("Upload an image and the model will classify it!")
 # Load the model once
 @st.cache_resource
 def load_my_model():
-    model = load_model("model.h5")  # change the name if needed
+    model = load_model("Cat_vs_dog_Pretrained.keras")  # change the name if needed
     return model
 
 model = load_my_model()
@@ -45,3 +45,4 @@ if uploaded_file is not None:
         st.success("Result: 🐶 Dog")
     else:
         st.success("Result: 🐱 Cat")
+
