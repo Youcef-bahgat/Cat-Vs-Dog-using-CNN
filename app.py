@@ -1,10 +1,11 @@
 import streamlit as st
 import tensorflow as tf
 import numpy as np
+import keras 
 from PIL import Image
 
 # تحميل الموديل
-model = tf.keras.models.load_model("model.h5", compile=False)
+model = keras.models.load_model("model.h5", compile=False)
 
 st.title("🐱 Cat vs 🐶 Dog Classifier")
 st.write("Upload an image and the model will predict Cat or Dog")
@@ -27,3 +28,4 @@ if uploaded_file is not None:
         st.success(f"🐶 Dog — Confidence: {prediction:.2f}")
     else:
         st.success(f"🐱 Cat — Confidence: {1-prediction:.2f}")
+
